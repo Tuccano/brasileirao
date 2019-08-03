@@ -1,9 +1,9 @@
 times = ('Santos', 'Palmeiras', 'Flamengo',
          'Internacional', 'Atlético MG', 'São Paulo',
-          'Corinthians', 'Atlético PR', 'Botafogo',
-           'Grêmio', 'Bahia', 'Goiás', 'Fortaleza',
-            'Ceará', 'Vasco', 'Fluminense', 'Cruzeiro',
-             'Chapecoense', 'CSA', 'Avaí')
+         'Corinthians', 'Atlético PR', 'Botafogo',
+         'Grêmio', 'Bahia', 'Goiás', 'Fortaleza',
+         'Ceará', 'Vasco', 'Fluminense', 'Cruzeiro',
+         'Chapecoense', 'CSA', 'Avaí')
 
 op = 0
 
