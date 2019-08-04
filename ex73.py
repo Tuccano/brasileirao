@@ -73,16 +73,12 @@ canvas.pack()
 bgimg = PhotoImage(file = "fut.png")
 
 # Background
-canvas.create_image(0, 0, anchor='nw', image=bgimg)
+canvas.create_image(0, 0, image=bgimg, anchor=NW)
 
 # Layout
-lb = Label(canvas, text="Brasileirão 2019", bg="white")
-lb.pack(side=TOP, fill=X)
-bt1 = Button(canvas, text="5 Primeiros colocados", command=bt1_click)
-bt2 = Button(canvas, text="5 Últimos colocados", command=bt2_click)
-bt3 = Button(canvas, text="Colocação de um time", command=bt3_click)
-bt1.pack(side=LEFT, anchor=CENTER)
-bt2.pack(side=LEFT, anchor=CENTER)
-bt3.pack(side=LEFT, anchor=CENTER)
+lb = Label(canvas, text="Brasileirão 2019", bg="white").place(x=20, y = 20)
+bt1 = Button(canvas, text="5 Primeiros colocados", command=bt1_click).place(x=20, y = 60)
+bt2 = Button(canvas, text="5 Últimos colocados", command=bt2_click).place(x=20, y = 120)
+bt3 = Button(canvas, text="Colocação de um time", command=bt3_click).place(x=20, y = 180)
 
 janela.mainloop()
