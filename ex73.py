@@ -1,5 +1,6 @@
 from tkinter import *
 
+# Tupla de times
 times = ('Santos', 'Palmeiras', 'Flamengo',
          'Internacional', 'Atlético MG', 'São Paulo',
          'Corinthians', 'Atlético PR', 'Botafogo',
@@ -7,7 +8,7 @@ times = ('Santos', 'Palmeiras', 'Flamengo',
          'Ceará', 'Vasco', 'Fluminense', 'Cruzeiro',
          'Chapecoense', 'CSA', 'Avaí')
 
-janela = Tk()
+
 
 def bt1_click():
     toptimes = Tk()
@@ -48,7 +49,7 @@ def bt3_click():
         else:
             lr["text"] = "Time inválido tente novamente"
 
-    select.geometry("200x200")
+    select.geometry("200x150")
     select.title("Colocação do time")
     txt = Label(select, text="Nome do time")
     bt = Button(select, width=10, text="OK", command=time)
@@ -57,23 +58,31 @@ def bt3_click():
     et.pack()
     bt.pack()
     lr.pack()
-    
-#Propriedades da janela
-wjanela = 600
-hjanela = 200
-janela.geometry(f"{wjanela}x{hjanela}")
-janela.title("vem de fut")
 
-#Cabeçalho
-lb = Label(janela, text="Brasileirão 2019", bg="white")
+# Propriedades da janela
+# janela.geometry("375x200")
+
+janela = Tk()
+
+# Canvas
+janela.title("VEM DE FUTEEEE")
+canvas = Canvas(janela, width=375, height=200)
+canvas.pack()
+
+# Source
+bgimg = PhotoImage(file = "fut.png")
+
+# Background
+canvas.create_image(0, 0, anchor='nw', image=bgimg)
+
+# Layout
+lb = Label(canvas, text="Brasileirão 2019", bg="white")
 lb.pack(side=TOP, fill=X)
-
-#Layout
-bt1 = Button(janela, text="5 Primeiros colocados", command=bt1_click)
-bt1.pack(side=LEFT, anchor=N)
-bt2 = Button(janela, text="5 Últimos colocados", command=bt2_click)
-bt2.pack(side=LEFT, anchor=N)
-bt3 = Button(janela, text="Colocação de um time", command=bt3_click)
-bt3.pack(side=LEFT, anchor=N)
+bt1 = Button(canvas, text="5 Primeiros colocados", command=bt1_click)
+bt2 = Button(canvas, text="5 Últimos colocados", command=bt2_click)
+bt3 = Button(canvas, text="Colocação de um time", command=bt3_click)
+bt1.pack(side=LEFT, anchor=CENTER)
+bt2.pack(side=LEFT, anchor=CENTER)
+bt3.pack(side=LEFT, anchor=CENTER)
 
 janela.mainloop()
